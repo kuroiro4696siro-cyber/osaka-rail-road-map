@@ -367,9 +367,15 @@ html, body {
     opacity: 0.9;
   }
   @media (max-width: 700px) {
-    #area-panel { left: 8px; right: 8px; bottom: 8px; }
-    #map { bottom: 110px; }
-    .area-btn { font-size: 11px; padding: 4px 6px; }
+    #area-panel {
+      left: 8px; right: 8px; bottom: 8px;
+      padding: 6px 8px 5px;
+    }
+    #area-panel-header { margin-bottom: 4px; }
+    #area-buttons { gap: 3px; }
+    .area-btn { font-size: 10px; padding: 4px 5px 3px; min-width: 0; flex: 1; }
+    .area-btn span { display: none; }
+    #map { bottom: 80px; }
   }
 </style>
 </head>
@@ -477,8 +483,10 @@ html, body {
   </div>
 
   <div class="panel-foot">
-    <div>&copy; OpenStreetMap contributors / CARTO</div>
-    <div>データ：開発用近似データ</div>
+    <div style="color:#ff6b35;font-weight:700;font-size:10px;margin-bottom:4px">Osaka Rail &amp; Road Layer Map</div>
+    <div>&copy; 2025 osaka-rail-road-map Project</div>
+    <div>地図データ：&copy; OpenStreetMap contributors / CARTO</div>
+    <div>鉄道・道路データ：開発用近似データ</div>
   </div>
 </div>
 
@@ -528,7 +536,7 @@ const map = L.map('map', {
 });
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+  attribution: '&copy; 2025 Osaka Rail &amp; Road Layer Map | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
   subdomains: 'abcd',
   maxZoom: 19
 }).addTo(map);
